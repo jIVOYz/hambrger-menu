@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+html, body {
+  background-color: #222222;
+}
+
+[class*=__container] {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: #333333;
+  height: 70px;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__container .menu-icon {
+  z-index: 5;
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 18px;
+  cursor: pointer;
+}
+.header__container .menu-icon span, .header__container .menu-icon::before, .header__container .menu-icon::after {
+  left: 0;
+  position: absolute;
+  height: 10%;
+  width: 100%;
+  transition: 0.3s;
+  background-color: #fff;
+}
+.header__container .menu-icon::before, .header__container .menu-icon::after {
+  content: "";
+}
+.header__container .menu-icon::before {
+  top: 0;
+}
+.header__container .menu-icon::after {
+  bottom: 0;
+}
+.header__container .menu-icon span {
+  top: 50%;
+  transform: scale(1) translate(0px, -50%);
+}
+.header__container .menu {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4b1d1d;
+  padding: 100px 30px 30px 30px;
+  transition: left 0.3s ease 0s;
+  left: 100%;
+}
+.header__container .menu li {
+  margin: 0 0 15px 0;
+}
+.header__container .menu a {
+  color: #FFF;
+  font-size: 1.5rem;
+}
+
+.menu._active {
+  left: 82%;
+}
+
+.menu-icon._active span {
+  transform: scale(0) translate(0px, -50%);
+}
+
+.menu-icon._active::before {
+  top: 50%;
+  transform: rotate(45deg) translate(0px, -50%);
+}
+
+.menu-icon._active::after {
+  bottom: 50%;
+  transform: rotate(-45deg) translate(0px, 50%);
+}
+
+@media screen and (max-width: 768px) {
+  .menu._active {
+    left: 0;
+  }
+}
+.header__logo {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.page {
+  padding: 90px 0;
+}
+
+.article {
+  color: #FFF;
+  font-size: 1.25rem;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fafafa;
+  margin: 20px;
+}/*# sourceMappingURL=style.css.map */
